@@ -13,28 +13,6 @@ void printTable(int process[], int n,int allocate[]){
 }
 
 void worstFit(int block[], int blk_size, int process[], int prcs_size){
-	/*int allocate_new[prcs_size];
-	memset(allocate_new,-1,sizeof(allocate_new));
-
-	int i,j,indx;
-	for(i=0;i<prcs_size;i++){
-		indx=-1;
-		for(j=0;j<blk_size;j++){
-			if(block[j]>=process[i]){
-				if(indx==-1)
-					indx=j;
-				else if(block[indx]<block[j]){
-					indx=j;
-					
-				}
-			}
-		}
-		if(indx!=-1){
-			allocate_new[i]=indx;
-			block[indx]=block[indx]-process[i];
-		}
-	}
-	printTable(process,prcs_size,allocate_new);*/
 
 	int allocate_new[prcs_size];
 	memset(allocate_new,-1,sizeof(allocate_new));
@@ -49,29 +27,6 @@ void worstFit(int block[], int blk_size, int process[], int prcs_size){
 			}
 		}
 	}
-	/*int allocation[prcs_size];
- 
-    // Initially no block is assigned to any process
-    memset(allocation, -1, sizeof(allocation));
- 
-    // pick each process and find suitable blocks
-    // according to its size ad assign to it
-    for (int i=0; i<prcs_size; i++)
-    {
-        for (int j=0; j<blk_size; j++)
-        {
-            if (block[j] >= process[i])
-            {
-                // allocate block j to p[i] process
-                allocation[i] = j;
- 
-                // Reduce available memory in this block.
-                block[j] -= process[i];
- 
-                break;
-            }
-        }
-    }*/
 	printTable(process,prcs_size,allocate_new);
 }
 
